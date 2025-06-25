@@ -1,0 +1,33 @@
+<mat-toolbar color="primary">
+  <span class="toolbar-title">Trainee Test Results</span>
+</mat-toolbar>
+
+<div class="page-wrapper">
+  <mat-card class="trainee-card">
+
+    <div class="filters-container">
+      <app-trainee-filters
+        (filterChange)="onFilterChange($event)"
+        [initialFilters]="filters()"
+      ></app-trainee-filters>
+    </div>
+
+    @if (loading()) {
+      <div class="spinner-container">
+        <mat-spinner diameter="200"></mat-spinner>
+      </div>
+    }
+
+    @if (error()) {
+      <div class="error-container">
+        <mat-icon color="warn">error</mat-icon>
+        {{ error() }}
+      </div>
+    }
+
+    @if (!loading() && !error()) {
+      <app-trainee-table [trainees]="filtered()"></app-trainee-table>
+    }
+
+  </mat-card>
+</div>
