@@ -10,4 +10,8 @@ export class TraineeApiService {
   getTrainees(): Observable<Trainee[]> {
     return this.http.get<Trainee[]>('/api/trainees');
   }
+
+  getTraineeById(id: number) {
+    return this.http.get<Trainee>(`/api/trainees/${id}`);
+  }
 }

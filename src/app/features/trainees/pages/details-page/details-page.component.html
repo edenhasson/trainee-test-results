@@ -1,0 +1,23 @@
+<div class="details-page-wrapper">
+  @if(trainee(); as t) {
+    <mat-card class="trainee-card">
+      <mat-card-title>{{ t.name }}</mat-card-title>
+      <mat-card-content>
+        <p>Score: {{ t.score }}</p>
+        <p>Status:
+          <mat-chip [color]="t.passed ? 'primary' : 'warn'" selected>
+            {{ t.passed ? 'Passed' : 'Failed' }}
+          </mat-chip>
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" (click)="goBack()">Back to list</button>
+      </mat-card-actions>
+    </mat-card>
+  } @else {
+    <div class="not-found-wrapper">
+      <p class="not-found-text">Trainee not found.</p>
+      <button mat-stroked-button color="primary" (click)="goBack()">Back to list</button>
+    </div>
+  }
+</div>
