@@ -21,12 +21,15 @@ This is a responsive Single Page Application (SPA) for viewing trainee test resu
 - ✅ Filter by name, score, and pass/fail status
 - ✅ Filters are optional — empty fields show all results
 - ✅ State is preserved when navigating between routes (without refresh)
+- ✅ Navigate to a trainee details page using route `/trainees/:id`
+- ✅ Display message if trainee ID is not found
 - ✅ Loading, empty, and error states for better UX
 - ✅ Responsive UI using Angular Material Design
 - ✅ Jest unit tests for services
 - ✅ Modular and testable structure
 
 ---
+
 
 ## 🛠️ Getting Started
 
